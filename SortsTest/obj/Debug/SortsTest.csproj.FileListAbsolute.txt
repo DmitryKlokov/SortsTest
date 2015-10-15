@@ -1,10 +1,13 @@
 C:\Users\Дмитрий\Documents\GitHub\Tamagotchi\SortsTest\SortsTest\bin\Debug\SortsTest.exe.config
+C:\Users\Дмитрий\Documents\GitHub\Tamagotchi\SortsTest\SortsTest\bin\Debug\SortsTest.exe
+C:\Users\Дмитрий\Documents\GitHub\Tamagotchi\SortsTest\SortsTest\bin\Debug\SortsTest.pdb
+C:\Users\Дмитрий\Documents\GitHub\Tamagotchi\SortsTest\SortsTest\obj\Debug\SortsTest.exe
+C:\Users\Дмитрий\Documents\GitHub\Tamagotchi\SortsTest\SortsTest\obj\Debug\SortsTest.pdb
 C:\Users\Дмитрий\Documents\GitHub\SortsTest\SortsTest\bin\Debug\SortsTest.exe.config
 C:\Users\Дмитрий\Documents\GitHub\SortsTest\SortsTest\bin\Debug\SortsTest.exe
 C:\Users\Дмитрий\Documents\GitHub\SortsTest\SortsTest\bin\Debug\SortsTest.pdb
-C:\Users\Дмитрий\Documents\GitHub\SortsTest\SortsTest\obj\Debug\SortsTest.csprojResolveAssemblyReference.cache
-C:\Users\Дмитрий\Documents\GitHub\SortsTest\SortsTest\obj\Debug\SortsTest.Form1.resources
-C:\Users\Дмитрий\Documents\GitHub\SortsTest\SortsTest\obj\Debug\SortsTest.Properties.Resources.resources
-C:\Users\Дмитрий\Documents\GitHub\SortsTest\SortsTest\obj\Debug\SortsTest.csproj.GenerateResource.Cache
 C:\Users\Дмитрий\Documents\GitHub\SortsTest\SortsTest\obj\Debug\SortsTest.exe
 C:\Users\Дмитрий\Documents\GitHub\SortsTest\SortsTest\obj\Debug\SortsTest.pdb
+C:\Users\Дмитрий\Documents\GitHub\Sorts\SortsTest\bin\Debug\SortsTest.exe.config
+C:\Users\Дмитрий\Documents\GitHub\Sorts\SortsTest\obj\Debug\SortsTest.exe
+C:\Users\Дмитрий\Documents\GitHub\Sorts\SortsTest\obj\Debug\SortsTest.pdb
