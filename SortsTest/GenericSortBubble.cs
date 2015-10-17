@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SortsTest
 {
-    class GenericSortBubble<T> : AbstractClassForSorts<T>
+    class GenericSortBubble<T> : AbstractClassForSorts<T> where T : IComparable
     {
         protected override void algorithm()
         {
@@ -15,14 +15,15 @@ namespace SortsTest
             {
                 for (int j = i + 1; j < collection.Count(); j++)
                 {
-                    //if (collection[i].CompareTo(collection[j]) == 0)
-                    //{
-                    //    T tmp = collection[i];
-                    //    collection[i] = collection[j];
-                    //    collection[j] = tmp;
-                    //}
+                    if (collection[i].CompareTo(collection[j]) == 1)
+                    {
+                        T tmp = collection[i];
+                        collection[i] = collection[j];
+                        collection[j] = tmp;
+                    }
                 }
             }
         }
+
     }
 }

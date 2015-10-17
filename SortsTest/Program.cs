@@ -23,9 +23,11 @@ namespace SortsTest
             for (int i = 0; i < 34; i++)
             {
                 int k = r.Next(0, 50);
+                int k1 = r.Next(0, 50);
+                int k2 = r.Next(0, 50);
                 li1.Add(k);
-                li2.Add(k);
-                li3.Add(k);
+                li2.Add(k1);
+                li3.Add(k2);
             }
             Console.Write("Before\n");
             foreach (int i in li1)

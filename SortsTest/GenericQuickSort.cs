@@ -6,39 +6,45 @@ using System.Threading.Tasks;
 
 namespace SortsTest
 {
-    class GenericQuickSort<T> : AbstractClassForSorts<T>
+    class GenericQuickSort<T> : AbstractClassForSorts<T> where T : IComparable
     {
         protected override void algorithm()
         {
-            //RecAlgorithm(collection,0,collection.Count());
+            RecAlgorithm(collection,0,collection.Count()-1);
         }
-        private void RecAlgorithm(T[] collection, int l, int r)
+        private void RecAlgorithm(T[] collection, int left, int right)
         {
-            T temp;
-            T x = collection[l + (r - l) / 2];
-            //запись эквивалентна (l+r)/2, 
-            //но не вызввает переполнения на больших данных
-            int i = l;
-            int j = r;
-            //код в while обычно выносят в процедуру particle
+            int i = left, j = right;
+            T pivot = collection[(left + right) / 2];
             while (i <= j)
             {
-              //->  while (collection[i] < x) i++;
-              //->  while (collection[j] > x) j--;
+                while (collection[i].CompareTo(pivot) < 0)
+                {
+                    i++;
+                }
+                while (collection[j].CompareTo(pivot) > 0)
+                {
+                    j--;
+                }
                 if (i <= j)
                 {
-                    temp = collection[i];
+                    // Swap
+                    T tmp = collection[i];
                     collection[i] = collection[j];
-                    collection[j] = temp;
+                    collection[j] = tmp;
                     i++;
                     j--;
                 }
             }
-            if (i < r)
-                RecAlgorithm(collection, i, r);
-
-            if (l < j)
-                RecAlgorithm(collection, l, j);
+            // Recursive calls
+            if (left < j)
+            {
+                RecAlgorithm(collection, left, j);
+            }
+            if (i < right)
+            {
+                RecAlgorithm(collection, i, right);
+            }
         }
     }
 }
