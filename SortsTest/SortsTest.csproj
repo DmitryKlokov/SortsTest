@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractClassForSorts.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="GenericHeapSort.cs" />
     <Compile Include="GenericShakeSort.cs" />
     <Compile Include="GenericSortBubble.cs" />
