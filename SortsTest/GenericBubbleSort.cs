@@ -13,11 +13,11 @@ namespace SortsTest
     {
         public void Sort(K collection)
         {
-            for (int i = 0; i < collection.Count() - 1; i++)
+            for (int i = 0; i < collection.Count(); i++)
             {
                 for (int j = i + 1; j < collection.Count(); j++)
                 {
-                    if (collection[i].CompareTo(collection[j]) == 1)
+                    if (collection[i].CompareTo(collection[j]) >0)
                     {                        
                         swap(i, j, collection);
                     }

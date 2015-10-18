@@ -18,13 +18,13 @@ namespace SortsTest
                 int end = collection.Count() - 1;
                 do
                 {
-                    if (collection[beg].CompareTo(collection[beg+1]) == 1)
+                    if (collection[beg].CompareTo(collection[beg+1]) >0)
                     {
                         swap( beg, beg + 1,collection);
                     }
                     beg++;
 
-                    if (collection[end - 1].CompareTo(collection[end]) == 1)
+                    if (collection[end - 1].CompareTo(collection[end]) >0)
                     {
                         swap( end - 1, end,collection);
                     }

@@ -15,6 +15,10 @@ namespace SortsTest
             //TestINT();
             //TestUserType();
             TestMassInt();
+            List<char> lc = new List<char>() { 'a', 'g', 'b', 'f', 'c' };
+            GenericHeapSort<char, List<char>> gsb = new GenericHeapSort<char, List<char>>();
+            gsb.Sort(lc);
+            ShowList<char>(lc);
         }
         static Stopwatch stopWatch = new Stopwatch();
 

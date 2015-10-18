@@ -35,7 +35,7 @@ namespace SortsTest
                 {
                     maxChild = i * 2 + 1;
                 }
-                else if (collection[i * 2 + 1].CompareTo(collection[i * 2 + 2]) == 1)
+                else if (collection[i * 2 + 1].CompareTo(collection[i * 2 + 2]) >0)
                 {
                     maxChild = i * 2 + 1;
                 }
@@ -43,7 +43,7 @@ namespace SortsTest
                 {
                     maxChild = i * 2 + 2;
                 }
-                if (collection[i].CompareTo(collection[maxChild]) == -1)
+                if (collection[i].CompareTo(collection[maxChild]) <0)
                 {
                     swap(i, maxChild, collection);
                     i = maxChild;
