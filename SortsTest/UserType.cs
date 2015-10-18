@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace SortsTest
 {
-    public class Class1:IComparable
+    public class UserType:IComparable
     {
         public int value;
 
         public int CompareTo(object v)
         {
-            return value.CompareTo((v as Class1).value);
+            return value.CompareTo((v as UserType).value);
         }
 
-        public Class1(int value)
+        public UserType(int value)
         {
             this.value = value;
         }

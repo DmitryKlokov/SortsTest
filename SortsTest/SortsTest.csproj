@@ -41,13 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractSorts.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="GenericQuickSort.cs" />
+    <Compile Include="UserType.cs" />
+    <Compile Include="GenericHeapSort.cs" />
     <Compile Include="GenericShakeSort.cs" />
     <Compile Include="GenericBubbleSort.cs" />
+    <Compile Include="ISorts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Swaper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
