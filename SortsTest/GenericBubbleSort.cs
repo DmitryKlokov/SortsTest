@@ -17,7 +17,7 @@ namespace SortsTest
             {
                 for (int j = i + 1; j < collection.Count(); j++)
                 {
-                    if (collection.ElementAt(i).CompareTo(collection.ElementAt(j)) == 1)
+                    if (collection[i].CompareTo(collection[j]) == 1)
                     {
                         swap(i, j, collection);
                     }

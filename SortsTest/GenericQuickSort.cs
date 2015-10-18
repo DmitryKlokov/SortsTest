@@ -20,7 +20,7 @@ namespace SortsTest
                 int i = a;
                 for (int j = a; j <= b; j++)         // просматриваем с a по b
                 {
-                    if (collection.ElementAt(j).CompareTo(collection.ElementAt(b)) <= 0)  // если элемент m[j] не превосходит m[b],
+                    if (collection[j].CompareTo(collection[b]) <= 0)  // если элемент m[j] не превосходит m[b],
                     {
                         swap(i, j, collection);                 // меняем местами m[j] и m[a], m[a+1], m[a+2] и так далее...
                                                        // то есть переносим элементы меньшие m[b] в начало,
