@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractClassForSorts.cs" />
+    <Compile Include="AbstractSorts.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="GenericHeapSort.cs" />
+    <Compile Include="GenericQuickSort.cs" />
     <Compile Include="GenericShakeSort.cs" />
-    <Compile Include="GenericSortBubble.cs" />
+    <Compile Include="GenericBubbleSort.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

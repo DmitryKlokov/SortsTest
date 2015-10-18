@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SortsTest
 {
-    class GenericShakeSort<T> : AbstractClassForSorts<T> where T : IComparable
+    class GenericShakeSort<T, K> : AbstractSorts<T, K>
+        where T : IComparable
+        where K : IList<T>
     {
         protected override void algorithm()
         {
@@ -14,29 +16,21 @@ namespace SortsTest
             {
                 int beg = 0;
                 int end = collection.Count() - 1;
-
                 do
                 {
-                    if (collection[beg].CompareTo(collection[beg + 1]) == 1)
+                    if (collection.ElementAt(beg).CompareTo(collection.ElementAt(beg+1)) == 1)
                     {
-                        Swap(collection, beg, beg + 1);
+                        swap( beg, beg + 1,collection);
                     }
                     beg++;
 
-                    if (collection[end - 1].CompareTo(collection[end]) == 1)
+                    if (collection.ElementAt(end - 1).CompareTo(collection.ElementAt(end)) == 1)
                     {
-                        Swap(collection, end - 1, end);
+                        swap( end - 1, end,collection);
                     }
                     end--;
-
                 } while (beg <= end);
             }
-        }
-        private void Swap(T[] collection, int i, int j)
-        {
-            T item = collection[i];
-            collection[i] = collection[j];
-            collection[j] = item;
         }
     }
 }

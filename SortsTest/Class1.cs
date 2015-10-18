@@ -9,6 +9,7 @@ namespace SortsTest
     public class Class1:IComparable
     {
         public int value;
+
         public int CompareTo(object v)
         {
             return value.CompareTo((v as Class1).value);
