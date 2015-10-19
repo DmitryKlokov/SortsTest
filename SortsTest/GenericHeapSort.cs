@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SortsTest
 {
-    class GenericHeapSort<T, K> : AbstractSort<T, K>
+    class GenericHeapSort<T, TK> : AbstractSort<T, TK>
         where T : IComparable
-        where K : IList<T>
+        where TK : IList<T>
     {
-        public override void Sort(K collection)
+        public override void Sort(TK collection)
         {
             for (int i = collection.Count() / 2 - 1; i >= 0; i--)
             {
@@ -18,12 +16,12 @@ namespace SortsTest
             }
             for (int i = collection.Count() - 1; i >= 1; i--)
             {
-                swap(0, i, collection);
+                Swap(0, i, collection);
 
                 ShiftDown(collection, 0, i);
             }
         }
-        private void ShiftDown(K collection, int i, int j)
+        private void ShiftDown(TK collection, int i, int j)
         {
             bool done = false;
 
@@ -45,7 +43,7 @@ namespace SortsTest
                 }
                 if (collection[i].CompareTo(collection[maxChild]) <0)
                 {
-                    swap(i, maxChild, collection);
+                    Swap(i, maxChild, collection);
                     i = maxChild;
                 }
                 else

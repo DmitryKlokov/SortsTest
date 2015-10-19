@@ -1,26 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using System.Diagnostics;
 
 namespace SortsTest
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            //TestINT();
-            //TestUserType();
-            TestMassInt();
+            //TestInt();
+            TestUserType();
+            //TestMassInt();
+
             List<string> lc = new List<string>() { "adffd", "sdcsd","ewewe","dsdssd","www"};
             GenericHeapSort<string, List<string>> gsb = new GenericHeapSort<string, List<string>>();
             gsb.Sort(lc);
-            ShowList<string>(lc);
+            ShowList(lc);
         }
-        static Stopwatch stopWatch = new Stopwatch();
+        static readonly Stopwatch StopWatch = new Stopwatch();
 
         public static void ShowList<T>(ICollection<T> list)
         {
@@ -37,26 +34,21 @@ namespace SortsTest
                 Console.Write(t.ToString() + " ");
             }
         }
-
-
-
-        public static void startTimer()
+        
+        public static void StartTimer()
         {
-            stopWatch.Reset();
-            stopWatch.Start(); 
+            StopWatch.Reset();
+            StopWatch.Start(); 
         }
-        public static void stopTimer(string name)
+        public static void StopTimer(string name)
         {
-            stopWatch.Stop();
-            TimeSpan ts = stopWatch.Elapsed;
+            StopWatch.Stop();
+            TimeSpan ts = StopWatch.Elapsed;
             string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-            Console.WriteLine(name+" " + elapsedTime.ToString());
+            Console.WriteLine(name+" " + elapsedTime);
         }
-
-
-
-
-        public static void TestINT()
+        
+        public static void TestInt()
         {
             Random r = new Random();
             List<int> li1 = new List<int>();
@@ -71,30 +63,29 @@ namespace SortsTest
             }
 
             Console.Write("Before\n");
-            ShowList<int>(li1);
+            ShowList(li1);
 
-            startTimer();
+            StartTimer();
             //bubble
             GenericBubbleSort<int, List<int>> gsb = new GenericBubbleSort<int, List<int>>();
             gsb.Sort(li1);
-            ShowList<int>(li1);
-            stopTimer("\nBubble");
+            ShowList(li1);
+            StopTimer("\nBubble");
 
-            startTimer();
+            StartTimer();
             //ShakeSort
             GenericShakeSort<int, List<int>> gss = new GenericShakeSort<int, List<int>>();
             gss.Sort(li2);
-            ShowList<int>(li2);
-            stopTimer("\nShake");
+            ShowList(li2);
+            StopTimer("\nShake");
 
-            startTimer();
+            StartTimer();
             //HeapSort
             GenericHeapSort<int, List<int>> gqs = new GenericHeapSort<int, List<int>>();
             gqs.Sort(li3);
-            ShowList<int>(li3);
-            stopTimer("\nHeap");
+            ShowList(li3);
+            StopTimer("\nHeap");
         }
-
         public static void TestUserType()
         {
             List<UserType> li1 = new List<UserType>();
@@ -110,30 +101,29 @@ namespace SortsTest
             }
 
             Console.Write("\nBefore\n");
-            ShowList<UserType>(li1);
+            ShowList(li1);
 
-            startTimer();
+            StartTimer();
             //bubble
             GenericBubbleSort<UserType, List<UserType>> gsb = new GenericBubbleSort<UserType, List<UserType>>();
             gsb.Sort(li1);
-            ShowList<UserType>(li1);
-            stopTimer("\nBubble");
+            ShowList(li1);
+            StopTimer("\nBubble");
 
-            startTimer();
+            StartTimer();
             //ShakeSort
             GenericShakeSort<UserType, List<UserType>> gss = new GenericShakeSort<UserType, List<UserType>>();
             gss.Sort(li2);
-            ShowList<UserType>(li2);
-            stopTimer("\nShake");
+            ShowList(li2);
+            StopTimer("\nShake");
 
-            startTimer();
+            StartTimer();
             //HeapSort
             GenericHeapSort<UserType, List<UserType>> ghs = new GenericHeapSort<UserType, List<UserType>>();
             ghs.Sort(li3);
-            ShowList<UserType>(li3);
-            stopTimer("\nHeap");
+            ShowList(li3);
+            StopTimer("\nHeap");
         }
-
         public static void TestMassInt()
         {
             int[] mass1 = new int[200];
@@ -150,28 +140,28 @@ namespace SortsTest
             }
 
             Console.Write("Before\n");
-            ShowMass<int>(mass1);
+            ShowMass(mass1);
             Console.Write("\n\n");
-            startTimer();
+            StartTimer();
             //bubble
             GenericBubbleSort<int, int[]> gsb = new GenericBubbleSort<int, int[]>();
             gsb.Sort(mass1);
-            ShowMass<int>(mass1);
-            stopTimer("\nBubble");
+            ShowMass(mass1);
+            StopTimer("\nBubble");
 
-            startTimer();
+            StartTimer();
             //ShakeSort
             GenericShakeSort<int, int[]> gss = new GenericShakeSort<int, int[]>();
             gss.Sort(mass2);
-            ShowMass<int>(mass2);
-            stopTimer("\nShake");
+            ShowMass(mass2);
+            StopTimer("\nShake");
 
-            startTimer();
+            StartTimer();
             //HeapSort
             GenericHeapSort<int, int[]> gqs = new GenericHeapSort<int, int[]>();
             gqs.Sort(mass3);
-            ShowMass<int>(mass3);
-            stopTimer("\nHeap");
+            ShowMass(mass3);
+            StopTimer("\nHeap");
         }
     }
 }

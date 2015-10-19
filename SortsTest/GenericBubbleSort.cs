@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SortsTest
 {
-    class GenericBubbleSort<T, K> : AbstractSort<T, K>
+    class GenericBubbleSort<T, TK> : AbstractSort<T, TK>
         where T : IComparable
-        where K : IList<T>
+        where TK : IList<T>
     {
-        public override void Sort(K collection)
+        public override void Sort(TK collection)
         {
             for (int i = 0; i < collection.Count(); i++)
             {
@@ -19,7 +16,7 @@ namespace SortsTest
                 {
                     if (collection[i].CompareTo(collection[j]) >0)
                     {                        
-                        swap(i, j, collection);
+                        Swap(i, j, collection);
                     }
                 }
             }

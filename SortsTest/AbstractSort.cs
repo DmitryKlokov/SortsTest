@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SortsTest
 {
-    abstract class AbstractSort<T, K>
+    abstract class AbstractSort<T, TK>
         where T : IComparable
-        where K : IList<T>
+        where TK : IList<T>
     {
-        protected void swap(int first, int second, K list)
+        protected void Swap(int first, int second, TK list)
         {
             object obj = list[first];
             list[first] = list[second];
             list[second] = (T)obj;
         }
 
-        abstract public void Sort(K collection);
+        abstract public void Sort(TK collection);
     }
 }
