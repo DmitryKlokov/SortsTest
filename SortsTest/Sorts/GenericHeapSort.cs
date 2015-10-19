@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SortsTest.Comparator;
 
-namespace SortsTest
+namespace SortsTest.Sorts
 {
     class GenericHeapSort<T, TK> : AbstractSort<T, TK>
-        where T : IComparable
         where TK : IList<T>
     {
-        public override void Sort(TK collection)
+        private IComparator<T> comparator;
+        public override void Sort(TK collection, IComparator<T> comparator)
         {
+            this.comparator = comparator;
             for (int i = collection.Count() / 2 - 1; i >= 0; i--)
             {
                 ShiftDown(collection, i, collection.Count());
@@ -33,7 +35,7 @@ namespace SortsTest
                 {
                     maxChild = i * 2 + 1;
                 }
-                else if (collection[i * 2 + 1].CompareTo(collection[i * 2 + 2]) >0)
+                else if (comparator.CompareTo(collection[i * 2 + 1],collection[i * 2 + 2]) >0)
                 {
                     maxChild = i * 2 + 1;
                 }
@@ -41,7 +43,7 @@ namespace SortsTest
                 {
                     maxChild = i * 2 + 2;
                 }
-                if (collection[i].CompareTo(collection[maxChild]) <0)
+                if (comparator.CompareTo(collection[i],collection[maxChild]) <0)
                 {
                     Swap(i, maxChild, collection);
                     i = maxChild;

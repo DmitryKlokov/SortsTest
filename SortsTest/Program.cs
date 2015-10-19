@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using SortsTest.Comparator;
+using SortsTest.Sorts;
 
 namespace SortsTest
 {
@@ -12,10 +14,10 @@ namespace SortsTest
             TestUserType();
             //TestMassInt();
 
-            List<string> lc = new List<string>() { "adffd", "sdcsd","ewewe","dsdssd","www"};
-            GenericHeapSort<string, List<string>> gsb = new GenericHeapSort<string, List<string>>();
-            gsb.Sort(lc);
-            ShowList(lc);
+            //List<string> lc = new List<string>() { "adffd", "sdcsd","ewewe","dsdssd","www"};
+            //AbstractSort<string, List<string>> gsb = new GenericBubbleSort<string, List<string>>();
+            //gsb.Sort(lc, comp );
+            //ShowList(lc);
         }
         static readonly Stopwatch StopWatch = new Stopwatch();
 
@@ -65,24 +67,24 @@ namespace SortsTest
             Console.Write("Before\n");
             ShowList(li1);
 
-            StartTimer();
+            IComparator<int> comparator = new DefaultComparator<int>();
             //bubble
-            GenericBubbleSort<int, List<int>> gsb = new GenericBubbleSort<int, List<int>>();
-            gsb.Sort(li1);
+            AbstractSort<int, List<int>> gsb = new GenericBubbleSort<int, List<int>>();
+            gsb.Sort(li1, comparator);
             ShowList(li1);
             StopTimer("\nBubble");
 
             StartTimer();
             //ShakeSort
-            GenericShakeSort<int, List<int>> gss = new GenericShakeSort<int, List<int>>();
-            gss.Sort(li2);
+            AbstractSort<int, List<int>> gss = new GenericShakeSort<int, List<int>>();
+            gss.Sort(li2, comparator);
             ShowList(li2);
             StopTimer("\nShake");
 
             StartTimer();
             //HeapSort
-            GenericHeapSort<int, List<int>> gqs = new GenericHeapSort<int, List<int>>();
-            gqs.Sort(li3);
+            AbstractSort<int, List<int>> gqs = new GenericHeapSort<int, List<int>>();
+            gqs.Sort(li3, comparator);
             ShowList(li3);
             StopTimer("\nHeap");
         }
@@ -103,24 +105,26 @@ namespace SortsTest
             Console.Write("\nBefore\n");
             ShowList(li1);
 
+
+            IComparator<UserType> comparator = new UserTypeComparator<UserType>();
             StartTimer();
             //bubble
-            GenericBubbleSort<UserType, List<UserType>> gsb = new GenericBubbleSort<UserType, List<UserType>>();
-            gsb.Sort(li1);
+            AbstractSort<UserType, List<UserType>> gsb = new GenericBubbleSort<UserType, List<UserType>>();
+            gsb.Sort(li1, comparator);
             ShowList(li1);
             StopTimer("\nBubble");
 
             StartTimer();
             //ShakeSort
-            GenericShakeSort<UserType, List<UserType>> gss = new GenericShakeSort<UserType, List<UserType>>();
-            gss.Sort(li2);
+            AbstractSort<UserType, List<UserType>> gss = new GenericShakeSort<UserType, List<UserType>>();
+            gss.Sort(li2, comparator);
             ShowList(li2);
             StopTimer("\nShake");
 
             StartTimer();
             //HeapSort
-            GenericHeapSort<UserType, List<UserType>> ghs = new GenericHeapSort<UserType, List<UserType>>();
-            ghs.Sort(li3);
+            AbstractSort<UserType, List<UserType>> ghs = new GenericHeapSort<UserType, List<UserType>>();
+            ghs.Sort(li3, comparator);
             ShowList(li3);
             StopTimer("\nHeap");
         }
@@ -139,27 +143,29 @@ namespace SortsTest
                 mass3[i] = a;
             }
 
+            IComparator<int> comparator = new DefaultComparator<int>();
+
             Console.Write("Before\n");
             ShowMass(mass1);
             Console.Write("\n\n");
             StartTimer();
             //bubble
-            GenericBubbleSort<int, int[]> gsb = new GenericBubbleSort<int, int[]>();
-            gsb.Sort(mass1);
+            AbstractSort<int, int[]> gsb = new GenericBubbleSort<int, int[]>();
+            gsb.Sort(mass1, comparator);
             ShowMass(mass1);
             StopTimer("\nBubble");
 
             StartTimer();
             //ShakeSort
-            GenericShakeSort<int, int[]> gss = new GenericShakeSort<int, int[]>();
-            gss.Sort(mass2);
+            AbstractSort<int, int[]> gss = new GenericShakeSort<int, int[]>();
+            gss.Sort(mass2, comparator);
             ShowMass(mass2);
             StopTimer("\nShake");
 
             StartTimer();
             //HeapSort
-            GenericHeapSort<int, int[]> gqs = new GenericHeapSort<int, int[]>();
-            gqs.Sort(mass3);
+            AbstractSort<int, int[]> gqs = new GenericHeapSort<int, int[]>();
+            gqs.Sort(mass3, comparator);
             ShowMass(mass3);
             StopTimer("\nHeap");
         }

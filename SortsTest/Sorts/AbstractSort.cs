@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using SortsTest.Comparator;
 
-namespace SortsTest
+namespace SortsTest.Sorts
 {
     abstract class AbstractSort<T, TK>
-        where T : IComparable
         where TK : IList<T>
     {
         protected void Swap(int first, int second, TK list)
@@ -14,6 +14,6 @@ namespace SortsTest
             list[second] = (T)obj;
         }
 
-        abstract public void Sort(TK collection);
+        abstract public void Sort(TK collection, IComparator<T> comparator);
     }
 }

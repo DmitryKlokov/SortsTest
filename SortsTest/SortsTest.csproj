@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractSort.cs" />
+    <Compile Include="Comparator\DefaultComparator.cs" />
+    <Compile Include="Comparator\UserTypeComparator.cs" />
+    <Compile Include="Sorts\AbstractSort.cs" />
+    <Compile Include="Comparator\IComparator.cs" />
     <Compile Include="UserType.cs" />
-    <Compile Include="GenericHeapSort.cs" />
-    <Compile Include="GenericShakeSort.cs" />
-    <Compile Include="GenericBubbleSort.cs" />
+    <Compile Include="Sorts\GenericHeapSort.cs" />
+    <Compile Include="Sorts\GenericShakeSort.cs" />
+    <Compile Include="Sorts\GenericBubbleSort.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

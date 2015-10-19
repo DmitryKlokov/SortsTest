@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SortsTest.Comparator;
 
-namespace SortsTest
+namespace SortsTest.Sorts
 {
     class GenericBubbleSort<T, TK> : AbstractSort<T, TK>
-        where T : IComparable
         where TK : IList<T>
     {
-        public override void Sort(TK collection)
+        public override void Sort(TK collection, IComparator<T> comparator)
         {
             for (int i = 0; i < collection.Count(); i++)
             {
                 for (int j = i + 1; j < collection.Count(); j++)
                 {
-                    if (collection[i].CompareTo(collection[j]) >0)
+                    if (comparator.CompareTo(collection[i],collection[j]) >0)
                     {                        
                         Swap(i, j, collection);
                     }
