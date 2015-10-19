@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SortsTest
 {
-    class GenericBubbleSort<T, K>: Swaper<T>, ISorts<T, K>
+    class GenericBubbleSort<T, K> : AbstractSort<T, K>
         where T : IComparable
         where K : IList<T>
     {
-        public void Sort(K collection)
+        public override void Sort(K collection)
         {
             for (int i = 0; i < collection.Count(); i++)
             {

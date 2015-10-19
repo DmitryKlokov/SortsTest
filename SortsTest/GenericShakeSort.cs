@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SortsTest
 {
-    class GenericShakeSort<T, K> : Swaper<T>, ISorts<T, K>
+    class GenericShakeSort<T, K> : AbstractSort<T, K>
         where T : IComparable
         where K : IList<T>
     {
-        public void Sort(K collection)
+        public override void Sort(K collection)
         {
             for (int i = 0; i < collection.Count() / 2; i++)
             {

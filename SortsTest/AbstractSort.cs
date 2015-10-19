@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace SortsTest
 {
-    public class Swaper<T>
+    abstract class AbstractSort<T, K>
+        where T : IComparable
+        where K : IList<T>
     {
-        public void swap(int first, int second, IList<T> list)
+        protected void swap(int first, int second, K list)
         {
             object obj = list[first];
             list[first] = list[second];
             list[second] = (T)obj;
         }
+
+        abstract public void Sort(K collection);
     }
 }
