@@ -41,10 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comparator\DefaultComparator.cs" />
-    <Compile Include="Comparator\UserTypeComparator.cs" />
+    <Compile Include="Comparer\DefaultComparer.cs" />
+    <Compile Include="Comparer\UserTypeComparer.cs" />
     <Compile Include="Sorts\AbstractSort.cs" />
-    <Compile Include="Comparator\IComparator.cs" />
     <Compile Include="UserType.cs" />
     <Compile Include="Sorts\GenericHeapSort.cs" />
     <Compile Include="Sorts\GenericShakeSort.cs" />

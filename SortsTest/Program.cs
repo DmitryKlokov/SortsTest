@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using SortsTest.Comparator;
+using SortsTest.Comparer;
 using SortsTest.Sorts;
 
 namespace SortsTest
@@ -67,7 +67,7 @@ namespace SortsTest
             Console.Write("Before\n");
             ShowList(li1);
 
-            IComparator<int> comparator = new DefaultComparator<int>();
+            IComparer<int> comparator = new DefaultComparer<int>();
             //bubble
             AbstractSort<int, List<int>> gsb = new GenericBubbleSort<int, List<int>>();
             gsb.Sort(li1, comparator);
@@ -106,7 +106,7 @@ namespace SortsTest
             ShowList(li1);
 
 
-            IComparator<UserType> comparator = new UserTypeComparator<UserType>();
+            IComparer<UserType> comparator = new UserTypeComparer<UserType>();
             StartTimer();
             //bubble
             AbstractSort<UserType, List<UserType>> gsb = new GenericBubbleSort<UserType, List<UserType>>();
@@ -143,7 +143,7 @@ namespace SortsTest
                 mass3[i] = a;
             }
 
-            IComparator<int> comparator = new DefaultComparator<int>();
+            IComparer<int> comparator = new DefaultComparer<int>();
 
             Console.Write("Before\n");
             ShowMass(mass1);

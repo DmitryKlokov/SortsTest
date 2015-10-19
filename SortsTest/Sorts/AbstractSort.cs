@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using SortsTest.Comparator;
 
 namespace SortsTest.Sorts
 {
@@ -14,6 +13,6 @@ namespace SortsTest.Sorts
             list[second] = (T)obj;
         }
 
-        abstract public void Sort(TK collection, IComparator<T> comparator);
+        abstract public void Sort(TK collection, IComparer<T> comparator);
     }
 }
